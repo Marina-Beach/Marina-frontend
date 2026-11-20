@@ -290,9 +290,9 @@ Changez les valeurs hexadécimales pour adapter la palette. Les polices sont cha
 ### Référencement naturel
 
 - Les titres, descriptions, URL canoniques et balises de partage des pages publiques sont gérés dans `src/components/Seo.tsx` en français et en anglais.
-- Définissez `VITE_SITE_URL=https://www.hotelmarinabeach.com` dans l'environnement de production ; la valeur ne doit pas se terminer par `/`.
+- Le domaine canonique est fixé à `https://www.hotelmarinabeach.com` dans `index.html` et `src/components/Seo.tsx`.
 - `public/robots.txt` référence `public/sitemap.xml`. Gardez ces fichiers synchronisés avec les routes publiques ; l'administration est exclue de l'indexation.
-- Le domaine figure aussi dans les métadonnées initiales de `index.html`. Si le domaine change, mettez à jour les trois emplacements ainsi que le fallback `SITE_URL` dans `Seo.tsx`.
+- Le domaine figure aussi dans les métadonnées initiales de `index.html`. Si le domaine change, mettez à jour ces métadonnées, `src/components/Seo.tsx`, `public/robots.txt`, `public/sitemap.xml` et la redirection de `vercel.json`.
 
 ---
 

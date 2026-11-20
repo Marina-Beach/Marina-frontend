@@ -3,8 +3,8 @@
   Les pages publiques du site. Le back-office (/admin) en est volontairement
   absent, et robots.txt l'exclut explicitement.
 
-  Si le domaine change, remplacer www.hotelmarinabeach.com partout ici,
-  dans robots.txt et dans VITE_SITE_URL.
+  Si le domaine change, mettre à jour ce sitemap, robots.txt, index.html,
+  src/components/Seo.tsx et vercel.json.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>

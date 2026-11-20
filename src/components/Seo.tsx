@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
-const SITE_URL = (import.meta.env.VITE_SITE_URL || 'https://www.hotelmarinabeach.com').replace(/\/+$/, '')
+const SITE_URL = 'https://www.hotelmarinabeach.com'
 const SITE_NAME = 'Hotel Marina Beach Toamasina'
 const OG_IMAGE = `${SITE_URL}/images/Photo-Gallerie-1-1200.jpg`
 
@@ -109,7 +109,8 @@ export default function Seo() {
 
   useEffect(() => {
     const isAdmin = pathname.startsWith('/admin')
-    const page = pages[pathname as keyof typeof pages]
+    const normalizedPathname = pathname === '/' ? '/' : pathname.replace(/\/+$/, '') || '/'
+    const page = pages[normalizedPathname as keyof typeof pages]
     const english = i18n.resolvedLanguage?.startsWith('en') || i18n.language.startsWith('en')
     const locale = english ? 'en' : 'fr'
     const metadata = page?.[locale]
@@ -117,7 +118,7 @@ export default function Seo() {
       ? 'Administration | Marina Beach'
       : metadata?.title ?? 'Page introuvable | Marina Beach'
     const description = metadata?.description ?? ''
-    const canonical = !isAdmin && metadata ? new URL(pathname, `${SITE_URL}/`).href : null
+    const canonical = !isAdmin && metadata ? new URL(normalizedPathname, `${SITE_URL}/`).href : null
     const language = english ? 'en' : 'fr'
 
     document.title = title
