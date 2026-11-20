@@ -5,17 +5,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Hotel Marina Beach Toamasina</title>
+  <title>Hôtel Marina Beach Toamasina | Séjour à Madagascar</title>
 
   <meta
     name="description"
-    content="Marina Beach Toamasina, une adresse de charme et de raffinement au cœur de Toamasina, Madagascar. Chambres et suites de luxe, restaurant gastronomique, spa, piscine et événements d'exception."
+    content="Découvrez l’hôtel Marina Beach à Toamasina, Madagascar : chambres et suites, restaurant, piscine, spa et espaces événementiels. Préparez votre séjour."
   />
 
   <!-- SEO -->
   <link
     rel="canonical"
-    href="https://hotel-marina-beach.vercel.app/"
+    href="https://www.hotelmarinabeach.com/"
   />
 
   <!-- Open Graph : partage sur les réseaux sociaux -->
@@ -24,26 +24,23 @@
 
   <meta
     property="og:url"
-    content="https://hotel-marina-beach.vercel.app/"
+    content="https://www.hotelmarinabeach.com/"
   />
 
   <meta
     property="og:title"
-    content="Hotel Marina Beach Toamasina — Hôtel de Luxe"
+    content="Hôtel Marina Beach Toamasina | Séjour à Madagascar"
   />
 
   <meta
     property="og:description"
-    content="Une adresse de charme au cœur de Toamasina, Madagascar. Chambres et suites, restaurant, spa et piscine."
+    content="Découvrez l’hôtel Marina Beach à Toamasina, Madagascar : chambres et suites, restaurant, piscine, spa et espaces événementiels."
   />
 
   <meta
     property="og:image"
-    content="https://hotel-marina-beach.vercel.app/images/hero/hero-building.jpg"
+    content="https://www.hotelmarinabeach.com/images/Photo-Gallerie-1-1200.jpg"
   />
-
-  <meta property="og:image:width" content="1382" />
-  <meta property="og:image:height" content="745" />
 
   <meta
     property="og:image:alt"
@@ -52,6 +49,15 @@
 
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:locale:alternate" content="en_GB" />
+  <meta name="twitter:title" content="Hôtel Marina Beach Toamasina | Séjour à Madagascar" />
+  <meta
+    name="twitter:description"
+    content="Découvrez l’hôtel Marina Beach à Toamasina, Madagascar : chambres et suites, restaurant, piscine, spa et espaces événementiels."
+  />
+  <meta
+    name="twitter:image"
+    content="https://www.hotelmarinabeach.com/images/Photo-Gallerie-1-1200.jpg"
+  />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -60,13 +66,14 @@
   <meta name="theme-color" content="#143369" />
 
   <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="icon" type="image/png" href="/logo-dark.png" />
 
   <!-- Préchargement de l'image principale -->
   <link
     rel="preload"
     as="image"
-    href="/images/hero/hero-building.jpg"
+    href="/images/Photo-Gallerie-1-1200.jpg"
     fetchpriority="high"
   />
 
@@ -85,48 +92,40 @@
   />
 
   <!-- Données structurées pour Google -->
-  <script type="application/ld+json">
+  <script id="structured-data" type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Hotel",
-    "name": "Hotel Marina Beach Toamasina",
-    "url": "https://hotel-marina-beach.vercel.app/",
-    "image": "https://hotel-marina-beach.vercel.app/images/hero/hero-building.jpg",
-    "description": "Hôtel de charme à Toamasina, Madagascar : chambres et suites, restaurant gastronomique, spa, piscine et salles d'événements.",
-    "telephone": "+261344904040",
-    "email": "marinabeach.resa@moov.mg",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "RN7, Lot 512 C 61 Tsarasaotra, Route d'Ambositra",
-      "addressLocality": "Toamasina",
-      "postalCode": "110",
-      "addressCountry": "MG"
-    },
-    "amenityFeature": [
+    "@graph": [
       {
-        "@type": "LocationFeatureSpecification",
-        "name": "Restaurant",
-        "value": true
+        "@type": "WebSite",
+        "@id": "https://www.hotelmarinabeach.com/#website",
+        "url": "https://www.hotelmarinabeach.com/",
+        "name": "Hotel Marina Beach Toamasina",
+        "publisher": { "@id": "https://www.hotelmarinabeach.com/#hotel" }
       },
       {
-        "@type": "LocationFeatureSpecification",
-        "name": "Spa",
-        "value": true
-      },
-      {
-        "@type": "LocationFeatureSpecification",
-        "name": "Piscine",
-        "value": true
-      },
-      {
-        "@type": "LocationFeatureSpecification",
-        "name": "Wi-Fi gratuit",
-        "value": true
-      },
-      {
-        "@type": "LocationFeatureSpecification",
-        "name": "Salles de réunion",
-        "value": true
+        "@type": "Hotel",
+        "@id": "https://www.hotelmarinabeach.com/#hotel",
+        "name": "Hotel Marina Beach Toamasina",
+        "url": "https://www.hotelmarinabeach.com/",
+        "image": "https://www.hotelmarinabeach.com/images/Photo-Gallerie-1-1200.jpg",
+        "description": "Découvrez l’hôtel Marina Beach à Toamasina, Madagascar : chambres et suites, restaurant, piscine, spa et espaces événementiels.",
+        "telephone": "+261344904040",
+        "email": "marinabeach.resa@moov.mg",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "RN7, Lot 512 C 61 Tsarasaotra, Route d’Ambositra",
+          "addressLocality": "Toamasina",
+          "postalCode": "110",
+          "addressCountry": "MG"
+        },
+        "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": "Restaurant", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Spa", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Piscine", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuit", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Salles de réunion", "value": true }
+        ]
       }
     ]
   }

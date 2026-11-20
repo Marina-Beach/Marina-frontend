@@ -124,7 +124,7 @@ export default function Rooms() {
       {/* Amenities */}
       <section className="bg-cream py-16">
         <div className="container-luxe">
-          <h3 className="font-serif text-2xl text-center mb-10">{t('rooms.amenitiesTitle')}</h3>
+          <h2 className="font-serif text-2xl text-center mb-10">{t('rooms.amenitiesTitle')}</h2>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-4xl mx-auto">
             {(t('rooms.amenities', { returnObjects: true }) as string[]).map((item) => (
               <div key={item} className="flex items-center gap-2 text-sm text-charcoal">

@@ -9,6 +9,7 @@ import Spa from '@/pages/Spa'
 import Events from '@/pages/Events'
 import Discover from '@/pages/Discover'
 import Contact from '@/pages/Contact'
+import Seo from '@/components/Seo'
 
 /**
  * Le back-office est chargé à la demande.
@@ -41,6 +42,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Seo />
       <ScrollToTop />
       {!adminArea && <Header />}
       {adminArea ? (

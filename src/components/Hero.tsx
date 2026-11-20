@@ -11,7 +11,7 @@ import BookingBar from './BookingBar'
  * - Tagline in italic serif
  * - Floating white booking bar overlapping the bottom edge
  *
- * IMAGE: /public/images/hero/hero-building.jpg
+ * IMAGE: /public/images/Photo-Gallerie-1-1200.jpg
  * Replace this file (same name) with your own high-resolution photo
  * (recommended: 2400x1600px, dusk/twilight lighting for best contrast).
  */

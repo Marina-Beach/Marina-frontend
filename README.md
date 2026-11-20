@@ -144,7 +144,7 @@ marina-beach-toamasina/
 
 | Dossier | Utilisé pour | Fichiers actuels | Taille recommandée |
 |---|---|---|---|
-| `public/images/hero/` | Image plein écran de l'accueil | `hero-building.jpg` | 1920×1280px min, paysage |
+| `public/images/` | Image plein écran de l'accueil | `Photo-Gallerie-1-1200.jpg` | 1920×1280px min, paysage |
 | `public/images/rooms/` | Chambres & Suites | `room-1.jpg` à `room-4.jpg` | 1600×1067px |
 | `public/images/restaurant/` | Page Restaurant | `restaurant-1.jpg`, `restaurant-2.jpg`, `food-1.jpg`, `breakfast-1.jpg` | 1600×1067px |
 | `public/images/pool/` | Piscine | `pool-1.jpg` à `pool-3.jpg` | 1600×1067px |
@@ -286,6 +286,13 @@ Changez les valeurs hexadécimales pour adapter la palette. Les polices sont cha
 - Menu mobile : icône hamburger → menu plein écran avec tous les liens.
 - Images en chargement différé (`lazy loading`) hors de la zone visible immédiate.
 - Build de production optimisé par Vite : CSS ~25 Ko (gzip ~5 Ko), JS ~455 Ko (gzip ~141 Ko).
+
+### Référencement naturel
+
+- Les titres, descriptions, URL canoniques et balises de partage des pages publiques sont gérés dans `src/components/Seo.tsx` en français et en anglais.
+- Définissez `VITE_SITE_URL=https://www.hotelmarinabeach.com` dans l'environnement de production ; la valeur ne doit pas se terminer par `/`.
+- `public/robots.txt` référence `public/sitemap.xml`. Gardez ces fichiers synchronisés avec les routes publiques ; l'administration est exclue de l'indexation.
+- Le domaine figure aussi dans les métadonnées initiales de `index.html`. Si le domaine change, mettez à jour les trois emplacements ainsi que le fallback `SITE_URL` dans `Seo.tsx`.
 
 ---
 
