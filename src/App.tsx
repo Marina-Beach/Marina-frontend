@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { lazy, Suspense, useEffect } from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -18,7 +18,6 @@ import Seo from '@/components/Seo'
  * personnes qui s'y connectent : les inclure dans le bundle principal ferait
  * payer leur poids à tous les visiteurs du site.
  */
-const AdminLogin = lazy(() => import('@/pages/AdminLogin'))
 const AdminDashboard = lazy(() => import('@/pages/AdminDashboard'))
 
 function ScrollToTop() {
@@ -52,7 +51,7 @@ export default function App() {
           </main>
         }>
           <Routes>
-            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route path="/admin/login" element={<Navigate to="/" replace />} />
             <Route path="/admin" element={<AdminDashboard />} />
           </Routes>
         </Suspense>
