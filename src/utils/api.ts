@@ -33,6 +33,8 @@ const discoverFallback = {
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000/api'
 
+const REQUESTS_API_URL = (import.meta.env.VITE_REQUESTS_API_URL || 'http://localhost:4100').replace(/\/$/, '')
+
 /** Réponse de `POST /bookings/availability`. */
 export interface AvailabilityResult {
   available: boolean
@@ -138,6 +140,29 @@ async function request<T>(
   return data
 }
 
+/** Envoie une demande client (contact, réservation, devis) par e-mail via Marina-backend. */
+async function sendRequest(
+  type: 'contact' | 'reservation' | 'event',
+  data: Record<string, unknown>
+): Promise<ApiResponse<any>> {
+  let response: Response
+  try {
+    response = await fetch(`${REQUESTS_API_URL}/api/requests`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ type, page: window.location.pathname, data }),
+    })
+  } catch {
+    return { error: 'Unable to reach the server. Check that the API is running and try again.' }
+  }
+
+  const body = await response.json().catch(() => ({}))
+  if (!response.ok) {
+    return { error: body.error || `Request failed (${response.status})` }
+  }
+  return body
+}
+
 /**
  * Pour les pages de contenu (chambres, menu, spa, événements) :
  * si l'API est injoignable ou renvoie une erreur, on utilise les
@@ -197,9 +222,16 @@ export const api = {
     adults: number
     children: number
     roomId?: string
-  }) => request<any>('/bookings', {
-    method: 'POST',
-    body: JSON.stringify(data),
+  }) => sendRequest('reservation', {
+    name: data.guestName,
+    email: data.guestEmail,
+    phone: data.guestPhone,
+    checkIn: data.checkIn,
+    checkOut: data.checkOut,
+    rooms: data.rooms,
+    adults: data.adults,
+    children: data.children,
+    roomId: data.roomId,
   }),
 
   // Contact
@@ -209,10 +241,7 @@ export const api = {
     phone: string
     subject: string
     message: string
-  }) => request<any>('/contact', {
-    method: 'POST',
-    body: JSON.stringify(data),
-  }),
+  }) => sendRequest('contact', data),
 
   sendEventInquiry: (data: {
     name: string
@@ -222,10 +251,7 @@ export const api = {
     message: string
     eventDate: string
     guestCount: string
-  }) => request<any>('/contact/event-inquiry', {
-    method: 'POST',
-    body: JSON.stringify(data),
-  }),
+  }) => sendRequest('event', data),
 
   // Newsletter
   subscribeNewsletter: (email: string) => request<any>('/newsletter', {
