@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Calendar, Users, ChevronDown, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react'
-import { useBooking, type SearchOutcome } from '@/hooks/useBooking'
+import { Calendar, Users, ChevronDown } from 'lucide-react'
+import { useBooking } from '@/hooks/useBooking'
 import { toInputDate } from '@/utils/dateHelpers'
 import { classNames } from '@/utils/helpers'
 
@@ -12,14 +12,12 @@ interface BookingBarProps {
 /**
  * BookingBar
  * ----------
- * Functional date pickers (native <input type="date">) + rooms/guests
- * stepper. Replicates the reference photo's floating white bar with
- * ARRIVÉE / DÉPART / CHAMBRES & VOYAGEURS / CHECK AVAILABILITY layout.
+ * Optional date and guest selectors, with room and rate links for the homepage.
  */
 export default function BookingBar({ floating = true }: BookingBarProps) {
   const { t } = useTranslation()
   const {
-    state, setCheckIn, setCheckOut, setRooms, setAdults, setChildren, submitSearch, outcome,
+    state, setCheckIn, setCheckOut, setRooms, setAdults, setChildren,
   } = useBooking()
   const [guestsOpen, setGuestsOpen] = useState(false)
   const guestsRef = useRef<HTMLDivElement>(null)
@@ -73,7 +71,6 @@ export default function BookingBar({ floating = true }: BookingBarProps) {
             : 'shadow-card'
         )}
       >
-        {/* Groupe Arrivée / Départ / Chambres & voyageurs, avec traits fins entre chaque bloc */}
         <div className="flex-1 flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-200 relative overflow-visible">
           {/* Check-in */}
           <label
@@ -148,62 +145,9 @@ export default function BookingBar({ floating = true }: BookingBarProps) {
             )}
           </div>
         </div>
-
-        {/*
-          CTA — bouton doré avec bordures pointues
-        */}
-        <div className="flex items-center justify-center p-3 md:p-4">
-          <button
-            type="button"
-            onClick={() => submitSearch()}
-            className="w-full md:w-auto bg-gold-500 hover:bg-gold-600 active:bg-gold-700 text-white uppercase tracking-widest2 text-[10px] md:text-[11px] font-semibold px-2 md:px-3 py-3.5 rounded-none transition-all duration-200 whitespace-nowrap hover:shadow-lg"
-          >
-            {t('common.checkAvailability')}
-          </button>
-        </div>
       </div>
 
-      {outcome && <SearchOutcomeNotice outcome={outcome} />}
     </div>
-  )
-}
-
-/**
- * Réponse de la recherche, sous la barre.
- *
- * Elle était jusqu'ici perdue : on interrogeait l'API puis on changeait de page
- * sans rien montrer. Le visiteur qui clique « Vérifier les disponibilités »
- * attend une réponse à cet endroit précis.
- */
-function SearchOutcomeNotice({ outcome }: { outcome: SearchOutcome }) {
-  const { t } = useTranslation()
-
-  const tones = {
-    searching: 'bg-white/95 text-gray-600',
-    available: 'bg-green-50 text-green-800',
-    full: 'bg-red-50 text-red-700',
-    failed: 'bg-gold-50 text-gold-800',
-  } as const
-
-  const Icon = outcome.status === 'available' ? CheckCircle2
-    : outcome.status === 'searching' ? Loader2
-      : AlertCircle
-
-  const message = outcome.status === 'searching' ? t('booking.searching')
-    : outcome.status === 'available' ? t('booking.searchAvailable', { count: outcome.availableRooms })
-      : outcome.status === 'full' ? t('booking.searchFull')
-        : t('booking.searchFailed')
-
-  return (
-    <p role="status"
-      className={classNames(
-        'mt-3 flex items-center gap-2 px-4 py-2.5 text-sm shadow-card w-full max-w-5xl',
-        tones[outcome.status],
-      )}>
-      <Icon size={16} aria-hidden="true"
-        className={classNames('shrink-0', outcome.status === 'searching' && 'animate-spin')} />
-      {message}
-    </p>
   )
 }
 

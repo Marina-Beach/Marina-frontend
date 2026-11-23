@@ -62,6 +62,10 @@ export default function RoomCard({ room, featured = false, availability }: RoomC
           </span>
         </div>
 
+        <p className="mb-4 text-sm font-medium text-charcoal">
+          {t('common.from')} {room.price} {room.currency} {t('common.perNight')}
+        </p>
+
         {availability && (
           <p className={`mb-4 text-xs ${availability.available ? 'text-green-700' : 'text-red-600'}`}>
             {availability.available
