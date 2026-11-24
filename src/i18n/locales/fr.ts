@@ -229,7 +229,7 @@ const fr = {
   },
   discover: {
     heroTitle: 'Découvrir Toamasina',
-    heroSubtitle: 'La ville aux mille pousse-pousse',
+    heroSubtitle: '',
     introTitle: "Toamasina, perle des hauts-plateaux malgaches",
     introText:
       "Fondée par les missionnaires norvégiens au XIXe siècle, Toamasina est réputée pour son climat frais, son architecture coloniale, ses eaux thermales et ses célèbres pousse-pousse colorés. Située dans la province du Atsinanana, la ville est une étape incontournable sur la RN7, la route qui traverse Madagascar du nord au sud.",

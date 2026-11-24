@@ -229,7 +229,7 @@ const en = {
   },
   discover: {
     heroTitle: 'Discover Toamasina',
-    heroSubtitle: 'The city of a thousand rickshaws',
+    heroSubtitle: '',
     introTitle: 'Toamasina, pearl of the Malagasy highlands',
     introText:
       "Founded by Norwegian missionaries in the 19th century, Toamasina is known for its cool climate, colonial architecture, thermal springs and famous colourful rickshaws (pousse-pousse). Located in the Atsinanana region, the city is a must-see stop on the RN7, the road that crosses Madagascar from north to south.",
