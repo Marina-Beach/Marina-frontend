@@ -74,7 +74,7 @@ const fr = {
     sisterTitle: 'Découvrez nos adresses sœurs à Madagascar',
     sisterText: 'Laissez-vous séduire par nos autres établissements, tous marqués par la même qualité de service et un charme singulier.',
     sister1Name: 'Hôtel La Colongette',
-    sister1Location: 'Toamasina',
+    sister1Location: 'Antsirabe',
     sister1Text: "Un lieu unique, empreint d'histoire et d'authenticité.",
     sister2Name: 'Royale Palace',
     sister2Location: 'Antsirabe',
