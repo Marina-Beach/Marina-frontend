@@ -41,7 +41,7 @@ const en = {
     introEyebrow: 'Welcome to Marina Beach',
     introTitle: 'A haven of serenity and refinement in the heart of Atsinanana',
     introText:
-      "Located in the heart of Toamasina, along the RN7 leading to southern Madagascar, the Marina Beach invites you to discover its exceptional and elegant setting, offering the best service to make your stay unforgettable. Its proximity to the city, an outstanding restaurant, a magnificent garden and swimming pool make Marina Beach a destination of choice in Toamasina.",
+      "Located on Madagascar's east coast, along <strong>Boulevard Ratsimilaho in Salazamay Nord</strong> in Toamasina, Marina Beach welcomes you with views of the Indian Ocean. Just <strong>2 km from the international airport</strong> and a few minutes from the city center, this 4-star hotel invites you to discover its exceptional and elegant setting and offers the best service to make your stay unforgettable. With a private beach nearby, a restaurant where culinary delights take center stage, a beautiful garden and a swimming pool, Marina Beach is a destination of choice in Toamasina.",
     servicesEyebrow: 'Our Services',
     servicesTitle: 'A 5-star experience at every moment',
     service1Title: 'Rooms & Suites',
@@ -232,7 +232,7 @@ const en = {
     heroSubtitle: '',
     introTitle: 'Toamasina, pearl of the Malagasy highlands',
     introText:
-      "Founded by Norwegian missionaries in the 19th century, Toamasina is known for its cool climate, colonial architecture, thermal springs and famous colourful rickshaws (pousse-pousse). Located in the Atsinanana region, the city is a must-see stop on the RN7, the road that crosses Madagascar from north to south.",
+      "Founded in the early 19th century as a trading post and later seized by King Radama I in 1817, Toamasina is known for its humid tropical climate, French colonial architecture, broad avenues lined with coconut palms, and famous colourful rickshaws (pousse-pousse). Located in the Atsinanana region, the city is Madagascar's leading commercial port and an essential stop on RN2, the road connecting it to Antananarivo.",
     activitiesTitle: 'Local Activities',
     activity1Title: 'Rickshaw Tour',
     activity1Text: "Discover the city aboard a colourful pousse-pousse, Toamasina's iconic mode of transport.",

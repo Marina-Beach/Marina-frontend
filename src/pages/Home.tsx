@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+import { Trans, useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { BedDouble, UtensilsCrossed, Waves, PartyPopper, Sparkles, Leaf, HeartHandshake } from 'lucide-react'
 import Hero from '@/components/Hero'
@@ -45,7 +45,7 @@ export default function Home() {
         <SectionHeading
           eyebrow={t('home.introEyebrow')}
           title={t('home.introTitle')}
-          text={t('home.introText')}
+          text={<Trans i18nKey="home.introText" components={{ strong: <strong /> }} />}
         />
       </AnimatedSection>
 

@@ -41,7 +41,7 @@ const fr = {
     introEyebrow: 'Bienvenue au Marina Beach',
     introTitle: "Un havre de sérénité et de raffinement au cœur du Atsinanana",
     introText:
-      "Implanté au cœur de la ville de Toamasina, le long de la RN7 qui mène vers le Sud de Madagascar, le Marina Beach vous invite à découvrir son cadre exceptionnel et élégant, et vous offre le meilleur service pour rendre votre séjour inoubliable. La proximité de la ville, le restaurant où le plaisir culinaire se démarque, le magnifique jardin et sa piscine font du Marina Beach une destination de premier choix à Toamasina.",
+      "Implanté sur la côte est de Madagascar, le long du <strong>Boulevard Ratsimilaho à Salazamay Nord</strong> à Toamasina, le Marina Beach vous ouvre ses portes face à l'océan Indien. À seulement <strong>2 km de l'aéroport international</strong> et à quelques minutes du centre-ville, cet hôtel 4 étoiles vous invite à découvrir son cadre exceptionnel et élégant, et vous offre le meilleur service pour rendre votre séjour inoubliable. La proximité de la plage privée, le restaurant où le plaisir culinaire se démarque, le magnifique jardin et sa piscine font du Marina Beach une destination de premier choix à Toamasina.",
     servicesEyebrow: 'Nos services',
     servicesTitle: 'Une expérience 5 étoiles à chaque instant',
     service1Title: 'Chambres & Suites',
@@ -232,7 +232,7 @@ const fr = {
     heroSubtitle: '',
     introTitle: "Toamasina, perle des hauts-plateaux malgaches",
     introText:
-      "Fondée par les missionnaires norvégiens au XIXe siècle, Toamasina est réputée pour son climat frais, son architecture coloniale, ses eaux thermales et ses célèbres pousse-pousse colorés. Située dans la province du Atsinanana, la ville est une étape incontournable sur la RN7, la route qui traverse Madagascar du nord au sud.",
+      "Fondée au début du XIXᵉ siècle comme poste de commerce, puis prise par le roi Radama Ier en 1817, Toamasina est réputée pour son climat tropical humide, son architecture coloniale française, ses larges avenues bordées de cocotiers et ses célèbres pousse-pousse colorés. Située dans la région d'Atsinanana, la ville est le premier port commercial de Madagascar et une étape incontournable sur la RN2, la route qui la relie à Antananarivo.",
     activitiesTitle: 'Activités locales',
     activity1Title: 'Tour en pousse-pousse',
     activity1Text: "Découvrez la ville à bord d'un pousse-pousse coloré, moyen de transport emblématique d'Toamasina.",

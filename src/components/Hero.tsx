@@ -11,7 +11,7 @@ import BookingBar from './BookingBar'
  * - Tagline in italic serif
  * - Floating white booking bar overlapping the bottom edge
  *
- * IMAGE: /public/images/Photo-Gallerie-1-1200.jpg
+ * IMAGE: /public/images/imgcouverture.png
  * Replace this file (same name) with your own high-resolution photo
  * (recommended: 2400x1600px, dusk/twilight lighting for best contrast).
  */
@@ -34,7 +34,7 @@ export default function Hero() {
         */}
         
         <img
-          src="/images/Photo-Gallerie-1-1200.jpg"
+          src="/images/imgcouverture.png"
           alt="Marina Beach Toamasina — façade de l'hôtel au crépuscule"
           width={1382}
           height={745}
