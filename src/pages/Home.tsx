@@ -45,7 +45,8 @@ export default function Home() {
         <SectionHeading
           eyebrow={t('home.introEyebrow')}
           title={t('home.introTitle')}
-          text={<Trans i18nKey="home.introText" components={{ strong: <strong /> }} />}
+          text={<Trans i18nKey="home.introText" components={{ initial: <span className="mr-1 inline-block align-[-0.12em] font-serif text-5xl leading-none text-gold-600" /> }} />}
+          textClassName="mx-auto max-w-3xl text-base leading-7 md:text-lg md:leading-8"
         />
       </AnimatedSection>
 
