@@ -43,7 +43,7 @@ const fr = {
     introText:
       "<initial>I</initial>mplanté sur la côte est de Madagascar, le long du Boulevard Ratsimilaho à Salazamay Nord à Toamasina, le Marina Beach vous ouvre ses portes face à l'océan Indien. À seulement 2 km de l'aéroport international et à quelques minutes du centre-ville, cet hôtel 4 étoiles vous invite à découvrir son cadre exceptionnel et élégant, et vous offre le meilleur service pour rendre votre séjour inoubliable. La proximité de la plage privée, le restaurant où le plaisir culinaire se démarque, le magnifique jardin et sa piscine font du Marina Beach une destination de premier choix à Toamasina.",
     servicesEyebrow: 'Nos services',
-    servicesTitle: 'Une expérience 5 étoiles à chaque instant',
+    servicesTitle: 'Une expérience 3 étoiles à chaque instant',
     service1Title: 'Chambres & Suites',
     service1Text: "Des espaces spacieux et raffinés, pensés pour votre confort absolu.",
     service2Title: 'Restaurant Gastronomique',
@@ -130,7 +130,7 @@ const fr = {
     deluxe: {
       name: 'Chambre Deluxe',
       description:
-        'Notre catégorie la plus prestigieuse : espace généreux, balcon privé et finitions haut de gamme pour une expérience 5 étoiles.',
+        'Notre catégorie la plus prestigieuse : espace généreux, balcon privé et finitions haut de gamme pour une expérience 3 étoiles.',
       view: 'Vue piscine',
       bedType: 'Lit king size',
     },
