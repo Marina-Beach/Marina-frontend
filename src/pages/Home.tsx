@@ -21,7 +21,7 @@ const highlights = [
 ]
 
 const sisterHotels = [
-  { key: 'sister1', image: '/images/Gallerie-2.jpg' },
+  { key: 'sister1', image: '/images/homefond.png' },
   { key: 'sister2', image: '/images/3.jpg' },
   { key: 'sister3', image: '/images/images.jpg' },
 ]
