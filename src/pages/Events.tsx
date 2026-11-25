@@ -6,7 +6,7 @@ import AnimatedSection from '@/components/AnimatedSection'
 import SectionHeading from '@/components/SectionHeading'
 import { equipmentKeys } from '@/data/events'
 import type { EventFormData, EventRoom } from '@/types'
-import { validateEmail } from '@/utils/helpers'
+import { validateEmail, validatePhone } from '@/utils/helpers'
 import { api, resolveImageUrl } from '@/utils/api'
 
 export default function Events() {
@@ -78,15 +78,20 @@ export default function Events() {
       setSubmitError('Veuillez saisir votre nom.')
       return
     }
-    if (!validateEmail(form.email)) {
+    if (!validateEmail(form.email.trim())) {
       setSubmitError('Veuillez saisir une adresse email valide.')
+      return
+    }
+    if (!validatePhone(form.phone.trim())) {
+      setSubmitError('Veuillez saisir un numéro de téléphone valide.')
       return
     }
     if (!form.eventDate) {
       setSubmitError("Veuillez choisir la date de l'événement.")
       return
     }
-    if (!form.guestCount || Number(form.guestCount) < 1) {
+    const guestCount = Number(form.guestCount)
+    if (!Number.isInteger(guestCount) || guestCount < 1 || guestCount > 1000) {
       setSubmitError("Veuillez indiquer le nombre de personnes.")
       return
     }
@@ -97,7 +102,14 @@ export default function Events() {
 
     setStatus('sending')
     try {
-      const result = await api.sendEventInquiry(form)
+      const result = await api.sendEventInquiry({
+        ...form,
+        name: form.name.trim(),
+        email: form.email.trim(),
+        phone: form.phone.trim(),
+        message: form.message.trim(),
+        guestCount: String(guestCount),
+      })
       if (result.error) {
         console.error('[Marina Beach] Event inquiry failed:', result.error)
         setSubmitError(
@@ -107,6 +119,15 @@ export default function Events() {
         )
         setStatus('idle')
       } else {
+        setForm({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: '',
+          eventDate: '',
+          guestCount: '',
+        })
         setStatus('success')
       }
     } catch (err) {
